@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title }} | CareerTrack{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container narrow-container">
+        <div class="page-header">
+            <div>
+                <p class="eyebrow">Opportunity details</p>
+                <h1>{{ page_title }}</h1>
+                <p class="muted">
+                    Keep the important information about this opportunity
+                    in one place.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <form method="post" class="form application-form">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="form-errors">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                <div class="form-grid">
+                    {% for field in form %}
+                        <div
+                            class="form-group
+                            {% if field.name == 'notes' %}full-width{% endif %}"
+                        >
+                            <label for="{{ field.id_for_label }}">
+                                {{ field.label }}
+
+                                {% if not field.field.required %}
+                                    <span class="optional">(optional)</span>
+                                {% endif %}
+                            </label>
+
+                            {{ field }}
+
+                            {% for error in field.errors %}
+                                <p class="field-error">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="form-actions">
+                    <button class="button" type="submit">
+                        {{ button_text }}
+                    </button>
+
+                    <a
+                        class="button button-secondary"
+                        href="{% url 'application_list' %}"
+                    >
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

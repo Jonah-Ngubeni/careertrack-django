@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | CareerTrack{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <div class="page-header">
+            <div>
+                <p class="eyebrow">Application overview</p>
+                <h1>Welcome, {{ user.username }}</h1>
+                <p class="muted">
+                    Here is the latest progress in your job search.
+                </p>
+            </div>
+
+            <a class="button" href="{% url 'application_create' %}">
+                Add application
+            </a>
+        </div>
+
+        <div class="stats-grid">
+            <article class="stat-card">
+                <span>Total</span>
+                <strong>{{ total_applications }}</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Saved</span>
+                <strong>{{ saved_count }}</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Applied</span>
+                <strong>{{ applied_count }}</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Interviews</span>
+                <strong>{{ interview_count }}</strong>
+            </article>
+
+            <article class="stat-card highlight">
+                <span>Offers</span>
+                <strong>{{ offer_count }}</strong>
+            </article>
+        </div>
+
+        <section class="content-card">
+            <div class="section-heading">
+                <div>
+                    <h2>Recent applications</h2>
+                    <p class="muted">
+                        Your five most recently tracked opportunities.
+                    </p>
+                </div>
+
+                <a href="{% url 'application_list' %}">View all</a>
+            </div>
+
+            {% if recent_applications %}
+                <div class="application-list">
+                    {% for application in recent_applications %}
+                        <a
+                            class="application-row"
+                            href="{% url 'application_detail' application.pk %}"
+                        >
+                            <div>
+                                <strong>{{ application.position }}</strong>
+                                <p>
+                                    {{ application.company }}
+                                    {% if application.location %}
+                                        · {{ application.location }}
+                                    {% endif %}
+                                </p>
+                            </div>
+
+                            <span class="status {{ application.status }}">
+                                {{ application.get_status_display }}
+                            </span>
+                        </a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <h3>No applications yet</h3>
+                    <p>
+                        Add your first opportunity to begin tracking
+                        your progress.
+                    </p>
+                    <a
+                        class="button"
+                        href="{% url 'application_create' %}"
+                    >
+                        Add your first application
+                    </a>
+                </div>
+            {% endif %}
+        </section>
+    </div>
+</section>
+{% endblock %}

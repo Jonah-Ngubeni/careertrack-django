@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Applications | CareerTrack{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <div class="page-header">
+            <div>
+                <p class="eyebrow">Opportunity pipeline</p>
+                <h1>Job applications</h1>
+                <p class="muted">
+                    Search, filter and manage your opportunities.
+                </p>
+            </div>
+
+            <a class="button" href="{% url 'application_create' %}">
+                Add application
+            </a>
+        </div>
+
+        <form method="get" class="filter-form">
+            <div class="filter-field">
+                <label for="search">Search</label>
+                <input
+                    id="search"
+                    name="search"
+                    type="search"
+                    value="{{ search_query }}"
+                    placeholder="Company, position or location"
+                >
+            </div>
+
+            <div class="filter-field">
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option value="">All statuses</option>
+
+                    {% for value, label in status_choices %}
+                        <option
+                            value="{{ value }}"
+                            {% if selected_status == value %}selected{% endif %}
+                        >
+                            {{ label }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button class="button" type="submit">Filter</button>
+
+            <a class="button button-secondary" href="{% url 'application_list' %}">
+                Clear
+            </a>
+        </form>
+
+        {% if applications %}
+            <div class="application-grid">
+                {% for application in applications %}
+                    <article class="application-card">
+                        <div class="application-card-top">
+                            <span class="status {{ application.status }}">
+                                {{ application.get_status_display }}
+                            </span>
+
+                            <span class="application-date">
+                                {{ application.date_applied|date:"d M Y" }}
+                            </span>
+                        </div>
+
+                        <h2>{{ application.position }}</h2>
+                        <p class="company">{{ application.company }}</p>
+
+                        {% if application.location %}
+                            <p class="muted">{{ application.location }}</p>
+                        {% endif %}
+
+                        <a
+                            class="text-link"
+                            href="{% url 'application_detail' application.pk %}"
+                        >
+                            View details →
+                        </a>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state content-card">
+                <h2>No applications found</h2>
+                <p>
+                    Add an application or change your search filters.
+                </p>
+                <a class="button" href="{% url 'application_create' %}">
+                    Add application
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}CareerTrack | Job Application Tracker{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <p class="eyebrow">Your career search, organised</p>
+
+            <h1>Turn every application into a clear next step.</h1>
+
+            <p class="hero-text">
+                Track opportunities, monitor progress and keep important
+                interview information in one secure place.
+            </p>
+
+            <div class="hero-actions">
+                <a class="button" href="{% url 'signup' %}">
+                    Start tracking
+                </a>
+
+                <a class="button button-secondary" href="{% url 'login' %}">
+                    Log in
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <p class="card-label">APPLICATION PIPELINE</p>
+
+            <div class="pipeline-item">
+                <span>Software Developer</span>
+                <strong class="status applied">Applied</strong>
+            </div>
+
+            <div class="pipeline-item">
+                <span>Junior Data Analyst</span>
+                <strong class="status interview">Interview</strong>
+            </div>
+
+            <div class="pipeline-item">
+                <span>Graduate Engineer</span>
+                <strong class="status saved">Saved</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features container">
+    <article class="feature-card">
+        <h2>Stay organised</h2>
+        <p>
+            Keep company, position, dates, links and notes together.
+        </p>
+    </article>
+
+    <article class="feature-card">
+        <h2>Track progress</h2>
+        <p>
+            Move opportunities from saved to applied, interview or offer.
+        </p>
+    </article>
+
+    <article class="feature-card">
+        <h2>Protect your data</h2>
+        <p>
+            Your personal application records are available only to you.
+        </p>
+    </article>
+</section>
+{% endblock %}

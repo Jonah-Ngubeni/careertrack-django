@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ application.position }} | CareerTrack
+{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container narrow-container">
+        <div class="page-header">
+            <div>
+                <span class="status {{ application.status }}">
+                    {{ application.get_status_display }}
+                </span>
+
+                <h1>{{ application.position }}</h1>
+                <p class="detail-company">{{ application.company }}</p>
+            </div>
+
+            <div class="header-actions">
+                <a
+                    class="button button-secondary"
+                    href="{% url 'application_update' application.pk %}"
+                >
+                    Edit
+                </a>
+
+                <a
+                    class="button button-danger"
+                    href="{% url 'application_delete' application.pk %}"
+                >
+                    Delete
+                </a>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <dl class="detail-grid">
+                <div>
+                    <dt>Company</dt>
+                    <dd>{{ application.company }}</dd>
+                </div>
+
+                <div>
+                    <dt>Position</dt>
+                    <dd>{{ application.position }}</dd>
+                </div>
+
+                <div>
+                    <dt>Location</dt>
+                    <dd>{{ application.location|default:"Not provided" }}</dd>
+                </div>
+
+                <div>
+                    <dt>Status</dt>
+                    <dd>{{ application.get_status_display }}</dd>
+                </div>
+
+                <div>
+                    <dt>Date applied</dt>
+                    <dd>{{ application.date_applied|date:"d F Y" }}</dd>
+                </div>
+
+                <div>
+                    <dt>Closing date</dt>
+                    <dd>
+                        {% if application.closing_date %}
+                            {{ application.closing_date|date:"d F Y" }}
+                        {% else %}
+                            Not provided
+                        {% endif %}
+                    </dd>
+                </div>
+            </dl>
+
+            {% if application.job_url %}
+                <div class="detail-section">
+                    <h2>Job advertisement</h2>
+                    <a
+                        href="{{ application.job_url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Open job advertisement ↗
+                    </a>
+                </div>
+            {% endif %}
+
+            <div class="detail-section">
+                <h2>Notes</h2>
+
+                {% if application.notes %}
+                    <div class="notes">
+                        {{ application.notes|linebreaks }}
+                    </div>
+                {% else %}
+                    <p class="muted">No notes have been added.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <a class="back-link" href="{% url 'application_list' %}">
+            ← Back to applications
+        </a>
+    </div>
+</section>
+{% endblock %}
