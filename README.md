@@ -2,6 +2,22 @@
 
 CareerTrack is a Django web application that helps users organise and monitor their job applications. Users can create an account, securely log in, record job opportunities, update application progress, search and filter records, and view summary statistics from a personal dashboard.
 
+# Table of Contents
+
+- [Features](#features)
+- [Application Statuses](#application-statuses)
+- [Technologies Used](#technologies-used)
+- [Database Model](#database-model)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Running the Automated Tests](#running-the-automated-tests)
+- [How to Use CareerTrack](#how-to-use-careertrack)
+- [Screenshots](#screenshots)
+- [Security](#security)
+- [Development Status](#development-status)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
+
 # Features
 
 - User registration
@@ -77,6 +93,10 @@ job_application_tracker/
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
+├── screenshots/
+│   ├── applications.png
+│   ├── dashboard.png
+│   └── homepage.png
 ├── static/
 │   └── css/
 │       └── style.css
@@ -103,11 +123,9 @@ job_application_tracker/
 # 1. Clone the repository
 
 ```powershell
-git clone <repository-url>
-cd job_application_tracker
+git clone https://github.com/Jonah-Ngubeni/careertrack-django.git
+cd careertrack-django
 ```
-
-Replace `<repository-url>` with the URL of this GitHub repository.
 
 # 2. Create a virtual environment
 
@@ -149,9 +167,7 @@ python manage.py runserver
 
 Open the following address in a browser:
 
-```text
-http://127.0.0.1:8000/
-```
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 # Running the Automated Tests
 
@@ -180,6 +196,7 @@ A successful test run should finish with:
 
 ```text
 Ran 12 tests
+
 OK
 ```
 
@@ -195,6 +212,20 @@ OK
 8. Open an application to view, edit, or delete it.
 9. Use search and status filters to find specific records.
 10. Log out when finished.
+
+# Screenshots
+
+# Home Page
+
+![CareerTrack home page](screenshots/homepage.png)
+
+# Dashboard
+
+![CareerTrack dashboard](screenshots/dashboard.png)
+
+# Applications Page
+
+![CareerTrack applications page](screenshots/applications.png)
 
 # Security
 
@@ -231,6 +262,6 @@ Potential future improvements include:
 
 # Author
 
-Jonah Ngubeni
+[Jonah Ngubeni] (https://github.com/Jonah-Ngubeni)
 
 Developed as a Django capstone project for the HyperionDev Software Engineering Bootcamp.
