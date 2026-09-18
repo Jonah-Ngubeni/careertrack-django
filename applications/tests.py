@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
+from .forms import JobApplicationForm
 from .models import JobApplication
 
 
@@ -246,10 +247,52 @@ class JobApplicationTests(TestCase):
 
         self.login_test_user()
 
-        response = self.client.get(
-            reverse("application_list")
-        )
+        response = self.client.get(reverse("application_list"))
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "MTN")
         self.assertNotContains(response, "Hidden Company")
+
+
+class JobApplicationFormValidationTests(TestCase):
+    def get_valid_data(self):
+        """Return valid form data for closing-date tests."""
+        return {
+            "company": "Example Company",
+            "position": "Software Developer",
+            "location": "Johannesburg",
+            "status": "applied",
+            "date_applied": "2026-09-10",
+            "closing_date": "2026-09-30",
+            "job_url": "",
+            "notes": "",
+        }
+
+    def test_rejects_closing_date_before_application_date(self):
+        """A closing date before the application date should be rejected."""
+        data = self.get_valid_data()
+        data["closing_date"] = "2026-09-01"
+
+        form = JobApplicationForm(data=data)
+
+        self.assertFalse(form.is_valid())
+        self.assertIn("closing_date", form.errors)
+        self.assertIn(
+            "Closing date cannot be earlier than the application date.",
+            form.errors["closing_date"],
+        )
+
+    def test_accepts_closing_date_after_application_date(self):
+        """A closing date after the application date should be accepted."""
+        form = JobApplicationForm(data=self.get_valid_data())
+
+        self.assertTrue(form.is_valid(), form.errors.as_text())
+
+    def test_accepts_empty_closing_date(self):
+        """The closing date should remain optional."""
+        data = self.get_valid_data()
+        data["closing_date"] = ""
+
+        form = JobApplicationForm(data=data)
+
+        self.assertTrue(form.is_valid(), form.errors.as_text())

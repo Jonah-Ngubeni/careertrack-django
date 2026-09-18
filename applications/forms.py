@@ -42,3 +42,16 @@ class JobApplicationForm(forms.ModelForm):
 
         for field in self.fields.values():
             field.widget.attrs["class"] = "form-control"
+
+    def clean(self):
+        cleaned_data = super().clean()
+        date_applied = cleaned_data.get("date_applied")
+        closing_date = cleaned_data.get("closing_date")
+
+        if date_applied and closing_date and closing_date < date_applied:
+            self.add_error(
+                "closing_date",
+                "Closing date cannot be earlier than the application date.",
+            )
+
+        return cleaned_data
