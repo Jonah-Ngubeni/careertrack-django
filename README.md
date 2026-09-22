@@ -177,7 +177,7 @@ Run the complete test suite with:
 python manage.py test
 ```
 
-The project currently includes 12 automated tests covering:
+The project currently includes 15 automated tests covering:
 
 - Model string representation
 - Authentication protection
@@ -265,3 +265,29 @@ Potential future improvements include:
 [Jonah Ngubeni] (https://github.com/Jonah-Ngubeni)
 
 Developed as a Django capstone project for the HyperionDev Software Engineering Bootcamp.
+
+# Running with Docker
+
+Docker provides an alternative to creating a local virtual environment.
+
+Build the Docker image:
+
+    docker build -t careertrack .
+
+Run the application:
+
+    docker run --rm -p 8000:8000 careertrack
+
+Open http://127.0.0.1:8000/ in a browser.
+
+The GitHub Actions workflow automatically builds the Docker image and runs the Django checks and tests.
+
+# Sphinx Documentation
+
+The generated documentation is stored in the `docs` directory.
+
+Build the HTML documentation:
+
+    sphinx-build -M html docs docs/_build
+
+Open the generated documentation at `docs/_build/html/index.html`.
