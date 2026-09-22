@@ -1,3 +1,5 @@
+﻿"""Views for authentication and job application management."""
+
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
@@ -9,6 +11,7 @@ from .models import JobApplication
 
 
 def home(request):
+    """Display the home page or redirect authenticated users."""
     if request.user.is_authenticated:
         return redirect("dashboard")
 
@@ -16,6 +19,7 @@ def home(request):
 
 
 def signup(request):
+    """Register a new user and sign them in."""
     if request.user.is_authenticated:
         return redirect("dashboard")
 
@@ -35,6 +39,7 @@ def signup(request):
 
 @login_required
 def dashboard(request):
+    """Display summary statistics for the current user's applications."""
     applications = JobApplication.objects.filter(user=request.user)
 
     context = {
@@ -59,6 +64,7 @@ def dashboard(request):
 
 @login_required
 def application_list(request):
+    """List the current user's applications with search and status filters."""
     applications = JobApplication.objects.filter(user=request.user)
     search_query = request.GET.get("search", "").strip()
     selected_status = request.GET.get("status", "").strip()
@@ -85,6 +91,7 @@ def application_list(request):
 
 @login_required
 def application_detail(request, pk):
+    """Display one application belonging to the current user."""
     application = get_object_or_404(
         JobApplication,
         pk=pk,
@@ -100,6 +107,7 @@ def application_detail(request, pk):
 
 @login_required
 def application_create(request):
+    """Create a job application for the current user."""
     if request.method == "POST":
         form = JobApplicationForm(request.POST)
 
@@ -125,6 +133,7 @@ def application_create(request):
 
 @login_required
 def application_update(request, pk):
+    """Update an application belonging to the current user."""
     application = get_object_or_404(
         JobApplication,
         pk=pk,
@@ -154,6 +163,7 @@ def application_update(request, pk):
 
 @login_required
 def application_delete(request, pk):
+    """Delete an application belonging to the current user."""
     application = get_object_or_404(
         JobApplication,
         pk=pk,
