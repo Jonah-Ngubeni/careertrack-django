@@ -1,0 +1,683 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>applications package &mdash; CareerTrack 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="applications" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CareerTrack
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">applications</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">applications package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-applications.admin">applications.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#applications.admin.JobApplicationAdmin"><code class="docutils literal notranslate"><span class="pre">JobApplicationAdmin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-applications.apps">applications.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#applications.apps.ApplicationsConfig"><code class="docutils literal notranslate"><span class="pre">ApplicationsConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-applications.forms">applications.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#applications.forms.SignUpForm"><code class="docutils literal notranslate"><span class="pre">SignUpForm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#applications.forms.JobApplicationForm"><code class="docutils literal notranslate"><span class="pre">JobApplicationForm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-applications.models">applications.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#applications.models.JobApplication"><code class="docutils literal notranslate"><span class="pre">JobApplication</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-applications.tests">applications.tests module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#applications.tests.JobApplicationTests"><code class="docutils literal notranslate"><span class="pre">JobApplicationTests</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#applications.tests.JobApplicationFormValidationTests"><code class="docutils literal notranslate"><span class="pre">JobApplicationFormValidationTests</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-applications.urls">applications.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-applications.views">applications.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#applications.views.home"><code class="docutils literal notranslate"><span class="pre">home()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#applications.views.signup"><code class="docutils literal notranslate"><span class="pre">signup()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#applications.views.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#applications.views.application_list"><code class="docutils literal notranslate"><span class="pre">application_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#applications.views.application_detail"><code class="docutils literal notranslate"><span class="pre">application_detail()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#applications.views.application_create"><code class="docutils literal notranslate"><span class="pre">application_create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#applications.views.application_update"><code class="docutils literal notranslate"><span class="pre">application_update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#applications.views.application_delete"><code class="docutils literal notranslate"><span class="pre">application_delete()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-applications">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CareerTrack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">applications</a></li>
+      <li class="breadcrumb-item active">applications package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/applications.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="applications-package">
+<h1>applications package<a class="headerlink" href="#applications-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-applications.admin">
+<span id="applications-admin-module"></span><h2>applications.admin module<a class="headerlink" href="#module-applications.admin" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="applications.admin.JobApplicationAdmin">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">applications.admin.</span></span><span class="sig-name descname"><span class="pre">JobApplicationAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.admin.JobApplicationAdmin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>Configure job applications in the Django administration site.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.admin.JobApplicationAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('company',</span> <span class="pre">'position',</span> <span class="pre">'status',</span> <span class="pre">'user',</span> <span class="pre">'date_applied')</span></span><a class="headerlink" href="#applications.admin.JobApplicationAdmin.list_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.admin.JobApplicationAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('status',</span> <span class="pre">'date_applied')</span></span><a class="headerlink" href="#applications.admin.JobApplicationAdmin.list_filter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.admin.JobApplicationAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('company',</span> <span class="pre">'position',</span> <span class="pre">'location',</span> <span class="pre">'user__username')</span></span><a class="headerlink" href="#applications.admin.JobApplicationAdmin.search_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.admin.JobApplicationAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('-date_applied',</span> <span class="pre">'-created_at')</span></span><a class="headerlink" href="#applications.admin.JobApplicationAdmin.ordering" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.admin.JobApplicationAdmin.date_hierarchy">
+<span class="sig-name descname"><span class="pre">date_hierarchy</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'date_applied'</span></span><a class="headerlink" href="#applications.admin.JobApplicationAdmin.date_hierarchy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="applications.admin.JobApplicationAdmin.media">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#applications.admin.JobApplicationAdmin.media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-applications.apps">
+<span id="applications-apps-module"></span><h2>applications.apps module<a class="headerlink" href="#module-applications.apps" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="applications.apps.ApplicationsConfig">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">applications.apps.</span></span><span class="sig-name descname"><span class="pre">ApplicationsConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.apps.ApplicationsConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.apps.ApplicationsConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></span><a class="headerlink" href="#applications.apps.ApplicationsConfig.default_auto_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.apps.ApplicationsConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'applications'</span></span><a class="headerlink" href="#applications.apps.ApplicationsConfig.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-applications.forms">
+<span id="applications-forms-module"></span><h2>applications.forms module<a class="headerlink" href="#module-applications.forms" title="Link to this heading"></a></h2>
+<p>Forms for account registration and job application management.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="applications.forms.SignUpForm">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">applications.forms.</span></span><span class="sig-name descname"><span class="pre">SignUpForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.forms.SignUpForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserCreationForm</span></code></p>
+<p>Collect the information required to register a new user.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="applications.forms.SignUpForm.Meta">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#applications.forms.SignUpForm.Meta" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.forms.SignUpForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#applications.forms.SignUpForm.Meta.model" title="Link to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.forms.SignUpForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('username',</span> <span class="pre">'email',</span> <span class="pre">'password1',</span> <span class="pre">'password2')</span></span><a class="headerlink" href="#applications.forms.SignUpForm.Meta.fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.forms.SignUpForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'email':</span> <span class="pre">&lt;django.forms.fields.EmailField</span> <span class="pre">object&gt;,</span> <span class="pre">'password1':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'password2':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'username':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></span><a class="headerlink" href="#applications.forms.SignUpForm.base_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.forms.SignUpForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'email':</span> <span class="pre">&lt;django.forms.fields.EmailField</span> <span class="pre">object&gt;,</span> <span class="pre">'password1':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'password2':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></span><a class="headerlink" href="#applications.forms.SignUpForm.declared_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="applications.forms.SignUpForm.media">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#applications.forms.SignUpForm.media" title="Link to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="applications.forms.JobApplicationForm">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">applications.forms.</span></span><span class="sig-name descname"><span class="pre">JobApplicationForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.forms.JobApplicationForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<p>Create or update a job application.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="applications.forms.JobApplicationForm.Meta">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#applications.forms.JobApplicationForm.Meta" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.forms.JobApplicationForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#applications.forms.JobApplicationForm.Meta.model" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#applications.models.JobApplication" title="applications.models.JobApplication"><code class="xref py py-class docutils literal notranslate"><span class="pre">JobApplication</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.forms.JobApplicationForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('company',</span> <span class="pre">'position',</span> <span class="pre">'location',</span> <span class="pre">'status',</span> <span class="pre">'date_applied',</span> <span class="pre">'closing_date',</span> <span class="pre">'job_url',</span> <span class="pre">'notes')</span></span><a class="headerlink" href="#applications.forms.JobApplicationForm.Meta.fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.forms.JobApplicationForm.Meta.widgets">
+<span class="sig-name descname"><span class="pre">widgets</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'closing_date':</span> <span class="pre">&lt;django.forms.widgets.DateInput</span> <span class="pre">object&gt;,</span> <span class="pre">'date_applied':</span> <span class="pre">&lt;django.forms.widgets.DateInput</span> <span class="pre">object&gt;,</span> <span class="pre">'notes':</span> <span class="pre">&lt;django.forms.widgets.Textarea</span> <span class="pre">object&gt;}</span></span><a class="headerlink" href="#applications.forms.JobApplicationForm.Meta.widgets" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.forms.JobApplicationForm.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.forms.JobApplicationForm.clean" title="Link to this definition"></a></dt>
+<dd><p>Validate that the closing date is not before the application date.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.forms.JobApplicationForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'closing_date':</span> <span class="pre">&lt;django.forms.fields.DateField</span> <span class="pre">object&gt;,</span> <span class="pre">'company':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'date_applied':</span> <span class="pre">&lt;django.forms.fields.DateField</span> <span class="pre">object&gt;,</span> <span class="pre">'job_url':</span> <span class="pre">&lt;django.forms.fields.URLField</span> <span class="pre">object&gt;,</span> <span class="pre">'location':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'notes':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'position':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'status':</span> <span class="pre">&lt;django.forms.fields.TypedChoiceField</span> <span class="pre">object&gt;}</span></span><a class="headerlink" href="#applications.forms.JobApplicationForm.base_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.forms.JobApplicationForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#applications.forms.JobApplicationForm.declared_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="applications.forms.JobApplicationForm.media">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#applications.forms.JobApplicationForm.media" title="Link to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-applications.models">
+<span id="applications-models-module"></span><h2>applications.models module<a class="headerlink" href="#module-applications.models" title="Link to this heading"></a></h2>
+<p>Database models for storing users’ job applications.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="applications.models.JobApplication">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">applications.models.</span></span><span class="sig-name descname"><span class="pre">JobApplication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.models.JobApplication" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Represent a job application belonging to an authenticated user.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="applications.models.JobApplication.Status">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.models.JobApplication.Status" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextChoices</span></code></p>
+<p>Provide the available stages of a job application.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.Status.SAVED">
+<span class="sig-name descname"><span class="pre">SAVED</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'saved'</span></span><a class="headerlink" href="#applications.models.JobApplication.Status.SAVED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.Status.APPLIED">
+<span class="sig-name descname"><span class="pre">APPLIED</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'applied'</span></span><a class="headerlink" href="#applications.models.JobApplication.Status.APPLIED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.Status.INTERVIEW">
+<span class="sig-name descname"><span class="pre">INTERVIEW</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'interview'</span></span><a class="headerlink" href="#applications.models.JobApplication.Status.INTERVIEW" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.Status.OFFER">
+<span class="sig-name descname"><span class="pre">OFFER</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'offer'</span></span><a class="headerlink" href="#applications.models.JobApplication.Status.OFFER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.Status.REJECTED">
+<span class="sig-name descname"><span class="pre">REJECTED</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'rejected'</span></span><a class="headerlink" href="#applications.models.JobApplication.Status.REJECTED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#applications.models.JobApplication.user" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">'children'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.company">
+<span class="sig-name descname"><span class="pre">company</span></span><a class="headerlink" href="#applications.models.JobApplication.company" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.position">
+<span class="sig-name descname"><span class="pre">position</span></span><a class="headerlink" href="#applications.models.JobApplication.position" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.location">
+<span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#applications.models.JobApplication.location" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#applications.models.JobApplication.status" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.date_applied">
+<span class="sig-name descname"><span class="pre">date_applied</span></span><a class="headerlink" href="#applications.models.JobApplication.date_applied" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.closing_date">
+<span class="sig-name descname"><span class="pre">closing_date</span></span><a class="headerlink" href="#applications.models.JobApplication.closing_date" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.job_url">
+<span class="sig-name descname"><span class="pre">job_url</span></span><a class="headerlink" href="#applications.models.JobApplication.job_url" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.notes">
+<span class="sig-name descname"><span class="pre">notes</span></span><a class="headerlink" href="#applications.models.JobApplication.notes" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><a class="headerlink" href="#applications.models.JobApplication.created_at" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.updated_at">
+<span class="sig-name descname"><span class="pre">updated_at</span></span><a class="headerlink" href="#applications.models.JobApplication.updated_at" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="applications.models.JobApplication.DoesNotExist">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#applications.models.JobApplication.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="applications.models.JobApplication.MultipleObjectsReturned">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#applications.models.JobApplication.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="applications.models.JobApplication.NotUpdated">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">NotUpdated</span></span><a class="headerlink" href="#applications.models.JobApplication.NotUpdated" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectNotUpdated</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseError</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.models.JobApplication.get_next_by_created_at">
+<span class="sig-name descname"><span class="pre">get_next_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.models.JobApplication.get_next_by_created_at" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.models.JobApplication.get_next_by_date_applied">
+<span class="sig-name descname"><span class="pre">get_next_by_date_applied</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateField:</span> <span class="pre">date_applied&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.models.JobApplication.get_next_by_date_applied" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.models.JobApplication.get_next_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_next_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.models.JobApplication.get_next_by_updated_at" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.models.JobApplication.get_previous_by_created_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.models.JobApplication.get_previous_by_created_at" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.models.JobApplication.get_previous_by_date_applied">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_applied</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateField:</span> <span class="pre">date_applied&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.models.JobApplication.get_previous_by_date_applied" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.models.JobApplication.get_previous_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.models.JobApplication.get_previous_by_updated_at" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.models.JobApplication.get_status_display">
+<span class="sig-name descname"><span class="pre">get_status_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;django.db.models.fields.CharField:</span> <span class="pre">status&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.models.JobApplication.get_status_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#applications.models.JobApplication.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></span><a class="headerlink" href="#applications.models.JobApplication.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="applications.models.JobApplication.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#applications.models.JobApplication.user_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-applications.tests">
+<span id="applications-tests-module"></span><h2>applications.tests module<a class="headerlink" href="#module-applications.tests" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">applications.tests.</span></span><span class="sig-name descname"><span class="pre">JobApplicationTests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.setUp" title="Link to this definition"></a></dt>
+<dd><p>Create test users and one job application before each test.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.login_test_user">
+<span class="sig-name descname"><span class="pre">login_test_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.login_test_user" title="Link to this definition"></a></dt>
+<dd><p>Log in the main test user.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_application_string_representation">
+<span class="sig-name descname"><span class="pre">test_application_string_representation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_application_string_representation" title="Link to this definition"></a></dt>
+<dd><p>The model should return a readable application name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_dashboard_requires_login">
+<span class="sig-name descname"><span class="pre">test_dashboard_requires_login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_dashboard_requires_login" title="Link to this definition"></a></dt>
+<dd><p>Logged-out visitors should be redirected to login.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_logged_in_user_can_view_dashboard">
+<span class="sig-name descname"><span class="pre">test_logged_in_user_can_view_dashboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_logged_in_user_can_view_dashboard" title="Link to this definition"></a></dt>
+<dd><p>A logged-in user should be able to open the dashboard.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_dashboard_displays_application_overview">
+<span class="sig-name descname"><span class="pre">test_dashboard_displays_application_overview</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_dashboard_displays_application_overview" title="Link to this definition"></a></dt>
+<dd><p>The dashboard should display its statistics and records.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_user_can_create_application">
+<span class="sig-name descname"><span class="pre">test_user_can_create_application</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_user_can_create_application" title="Link to this definition"></a></dt>
+<dd><p>A logged-in user should be able to create an application.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_user_can_update_application">
+<span class="sig-name descname"><span class="pre">test_user_can_update_application</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_user_can_update_application" title="Link to this definition"></a></dt>
+<dd><p>A user should be able to update their application.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_user_can_delete_application">
+<span class="sig-name descname"><span class="pre">test_user_can_delete_application</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_user_can_delete_application" title="Link to this definition"></a></dt>
+<dd><p>A user should be able to delete their application.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_search_finds_matching_application">
+<span class="sig-name descname"><span class="pre">test_search_finds_matching_application</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_search_finds_matching_application" title="Link to this definition"></a></dt>
+<dd><p>Searching by company should return a matching record.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_search_hides_non_matching_application">
+<span class="sig-name descname"><span class="pre">test_search_hides_non_matching_application</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_search_hides_non_matching_application" title="Link to this definition"></a></dt>
+<dd><p>A search without matches should hide existing records.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_status_filter_returns_matching_application">
+<span class="sig-name descname"><span class="pre">test_status_filter_returns_matching_application</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_status_filter_returns_matching_application" title="Link to this definition"></a></dt>
+<dd><p>Filtering by status should return matching records.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_user_cannot_view_another_users_application">
+<span class="sig-name descname"><span class="pre">test_user_cannot_view_another_users_application</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_user_cannot_view_another_users_application" title="Link to this definition"></a></dt>
+<dd><p>Users must not be able to view another user’s record.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationTests.test_application_list_only_shows_current_user_records">
+<span class="sig-name descname"><span class="pre">test_application_list_only_shows_current_user_records</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationTests.test_application_list_only_shows_current_user_records" title="Link to this definition"></a></dt>
+<dd><p>The application list must only show the current user’s data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationFormValidationTests">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">applications.tests.</span></span><span class="sig-name descname"><span class="pre">JobApplicationFormValidationTests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationFormValidationTests" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationFormValidationTests.get_valid_data">
+<span class="sig-name descname"><span class="pre">get_valid_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationFormValidationTests.get_valid_data" title="Link to this definition"></a></dt>
+<dd><p>Return valid form data for closing-date tests.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationFormValidationTests.test_rejects_closing_date_before_application_date">
+<span class="sig-name descname"><span class="pre">test_rejects_closing_date_before_application_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationFormValidationTests.test_rejects_closing_date_before_application_date" title="Link to this definition"></a></dt>
+<dd><p>A closing date before the application date should be rejected.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationFormValidationTests.test_accepts_closing_date_after_application_date">
+<span class="sig-name descname"><span class="pre">test_accepts_closing_date_after_application_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationFormValidationTests.test_accepts_closing_date_after_application_date" title="Link to this definition"></a></dt>
+<dd><p>A closing date after the application date should be accepted.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="applications.tests.JobApplicationFormValidationTests.test_accepts_empty_closing_date">
+<span class="sig-name descname"><span class="pre">test_accepts_empty_closing_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#applications.tests.JobApplicationFormValidationTests.test_accepts_empty_closing_date" title="Link to this definition"></a></dt>
+<dd><p>The closing date should remain optional.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-applications.urls">
+<span id="applications-urls-module"></span><h2>applications.urls module<a class="headerlink" href="#module-applications.urls" title="Link to this heading"></a></h2>
+</section>
+<section id="module-applications.views">
+<span id="applications-views-module"></span><h2>applications.views module<a class="headerlink" href="#module-applications.views" title="Link to this heading"></a></h2>
+<p>Views for authentication and job application management.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="applications.views.home">
+<span class="sig-prename descclassname"><span class="pre">applications.views.</span></span><span class="sig-name descname"><span class="pre">home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.views.home" title="Link to this definition"></a></dt>
+<dd><p>Display the home page or redirect authenticated users.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="applications.views.signup">
+<span class="sig-prename descclassname"><span class="pre">applications.views.</span></span><span class="sig-name descname"><span class="pre">signup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.views.signup" title="Link to this definition"></a></dt>
+<dd><p>Register a new user and sign them in.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="applications.views.dashboard">
+<span class="sig-prename descclassname"><span class="pre">applications.views.</span></span><span class="sig-name descname"><span class="pre">dashboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.views.dashboard" title="Link to this definition"></a></dt>
+<dd><p>Display summary statistics for the current user’s applications.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="applications.views.application_list">
+<span class="sig-prename descclassname"><span class="pre">applications.views.</span></span><span class="sig-name descname"><span class="pre">application_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.views.application_list" title="Link to this definition"></a></dt>
+<dd><p>List the current user’s applications with search and status filters.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="applications.views.application_detail">
+<span class="sig-prename descclassname"><span class="pre">applications.views.</span></span><span class="sig-name descname"><span class="pre">application_detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.views.application_detail" title="Link to this definition"></a></dt>
+<dd><p>Display one application belonging to the current user.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="applications.views.application_create">
+<span class="sig-prename descclassname"><span class="pre">applications.views.</span></span><span class="sig-name descname"><span class="pre">application_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.views.application_create" title="Link to this definition"></a></dt>
+<dd><p>Create a job application for the current user.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="applications.views.application_update">
+<span class="sig-prename descclassname"><span class="pre">applications.views.</span></span><span class="sig-name descname"><span class="pre">application_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.views.application_update" title="Link to this definition"></a></dt>
+<dd><p>Update an application belonging to the current user.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="applications.views.application_delete">
+<span class="sig-prename descclassname"><span class="pre">applications.views.</span></span><span class="sig-name descname"><span class="pre">application_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#applications.views.application_delete" title="Link to this definition"></a></dt>
+<dd><p>Delete an application belonging to the current user.</p>
+</dd></dl>
+
+</section>
+<section id="module-applications">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-applications" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Jonah Ngubeni.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
