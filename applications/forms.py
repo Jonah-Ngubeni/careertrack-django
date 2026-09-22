@@ -1,3 +1,5 @@
+﻿"""Forms for account registration and job application management."""
+
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -6,6 +8,8 @@ from .models import JobApplication
 
 
 class SignUpForm(UserCreationForm):
+    """Collect the information required to register a new user."""
+
     email = forms.EmailField(required=True)
 
     class Meta:
@@ -14,6 +18,8 @@ class SignUpForm(UserCreationForm):
 
 
 class JobApplicationForm(forms.ModelForm):
+    """Create or update a job application."""
+
     class Meta:
         model = JobApplication
         fields = (
@@ -38,12 +44,14 @@ class JobApplicationForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
+        """Apply consistent styling to every form field."""
         super().__init__(*args, **kwargs)
 
         for field in self.fields.values():
             field.widget.attrs["class"] = "form-control"
 
     def clean(self):
+        """Validate that the closing date is not before the application date."""
         cleaned_data = super().clean()
         date_applied = cleaned_data.get("date_applied")
         closing_date = cleaned_data.get("closing_date")
